@@ -1,4 +1,4 @@
-package core.twopointers;
+package core.array.twopointers;
 
 /**
  * LC 42. Trapping Rain Water
