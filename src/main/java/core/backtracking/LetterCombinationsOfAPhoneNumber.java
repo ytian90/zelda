@@ -23,12 +23,10 @@ public class LetterCombinationsOfAPhoneNumber {
             res.add(sb.toString());
             return;
         }
-        for (int i = start; i < digits.length(); i++) {
-            for (char c : map[digits.charAt(i) - '0'].toCharArray()) {
-                sb.append(c);
-                helper(digits, sb, i + 1, res);
-                sb.deleteCharAt(sb.length() - 1);
-            }
+        for (char c : map[digits.charAt(start) - '0'].toCharArray()) {
+            sb.append(c);
+            helper(digits, sb, start + 1, res);
+            sb.deleteCharAt(sb.length() - 1);
         }
     }
     // T: O(N * 4 ^ N), where N is the length of digits.
