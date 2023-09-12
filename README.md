@@ -2,6 +2,10 @@
 
 ## Design
 
+[Design Slack(systemdesign.one)](https://systemdesign.one/slack-architecture/)
+
+[Design Leaderboard(systemdesign.one)](https://systemdesign.one/leaderboard-system-design/)
+
 [Designing Uber(highscalability)](http://highscalability.com/blog/2022/1/25/designing-uber.html)
 
 [Designing Tinder(highscalability)](http://highscalability.com/blog/2022/1/17/designing-tinder.html)
