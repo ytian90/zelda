@@ -10,7 +10,6 @@ public class InsertDeleteGetRandomO1 {
     // Insert: check exist, update list and map
     // Remove: check exist, get val's loc, put last value to loc, remove last position/val
     // Random: random nextInt the size of list
-
     List<Integer> nums;
     Map<Integer, Integer> locations;
     Random random;

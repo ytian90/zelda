@@ -1,4 +1,4 @@
-package core.graph;
+package core.graph.dijkstra;
 
 import java.util.*;
 
@@ -63,10 +63,10 @@ public class CheapestFlightsWithinKStops {
 
     // Dijkstra: Priority Queue
     public int findCheapestPrice3(int n, int[][] flights, int src, int dst, int k) {
-        Map<Integer, List<int[]>> adj = new HashMap<>();
-        for (int[] f : flights) {
-            adj.computeIfAbsent(f[0], value -> new ArrayList<>())
-                    .add(new int[]{f[1], f[2]});
+        Map<Integer, Map<Integer, Integer>> map = new HashMap<>();
+        for (int[] e : flights) {
+            map.putIfAbsent(e[0], new HashMap<>());
+            map.get(e[0]).put(e[1], e[2]);
         }
         int[] stops = new int[n];
         Arrays.fill(stops, Integer.MAX_VALUE);
@@ -83,11 +83,10 @@ public class CheapestFlightsWithinKStops {
             if (node == dst) {
                 return price;
             }
-            if (!adj.containsKey(node)) {
-                continue;
-            }
-            for (int[] a : adj.get(node)) {
-                pq.add(new int[]{price + a[1], a[0], steps + 1});
+            if (map.containsKey(node)) {
+                for (Map.Entry<Integer, Integer> entry : map.get(node).entrySet()) {
+                    pq.add(new int[]{price + entry.getValue(), entry.getKey(), steps + 1});
+                }
             }
         }
         return -1;
