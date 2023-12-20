@@ -94,7 +94,7 @@ public class LowestCommonAncestorOfABinaryTree1To4 {
     /**
      * Q4, looking for several nodes
      */
-    public TreeNode lowestCommonAncestor_4(TreeNode root, TreeNode[] nodes) {
+    public static TreeNode lowestCommonAncestor_4(TreeNode root, TreeNode[] nodes) {
         Set<Integer> set = new HashSet<>();
         for (TreeNode n : nodes) {
             set.add(n.val);
@@ -102,7 +102,7 @@ public class LowestCommonAncestorOfABinaryTree1To4 {
         return helper(root, set);
     }
 
-    private TreeNode helper(TreeNode root, Set<Integer> set) {
+    private static TreeNode helper(TreeNode root, Set<Integer> set) {
         if (root == null) return root;
         if (set.contains(root.val)) {
             return root;
@@ -110,6 +110,17 @@ public class LowestCommonAncestorOfABinaryTree1To4 {
         TreeNode left = helper(root.left, set);
         TreeNode right = helper(root.right, set);
         return left == null ? right : right == null ? left : root;
+    }
+
+    public static void main(String[] args) {
+        TreeNode n0 = new TreeNode(5);
+        n0.left = new TreeNode(3);
+        n0.right = new TreeNode(7);
+        n0.left.left = new TreeNode(2);
+        n0.left.right = new TreeNode(4);
+
+        TreeNode[] input = new TreeNode[]{n0.left.left, n0.left.right, n0.right};
+        System.out.println(lowestCommonAncestor_4(n0, input).val);
     }
 
     class Node {

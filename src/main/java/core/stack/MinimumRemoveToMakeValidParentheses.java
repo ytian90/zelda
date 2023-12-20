@@ -52,12 +52,12 @@ public class MinimumRemoveToMakeValidParentheses {
             sb.append(c);
         }
         StringBuilder res = new StringBuilder();
-        int extraOpen = openSeen - balance;
+        int openToKeep = openSeen - balance;
         for (int i = 0; i < sb.length(); i++) {
             char c = sb.charAt(i);
             if (c == '(') {
-                extraOpen--;
-                if (extraOpen < 0) {
+                openToKeep--;
+                if (openToKeep < 0) {
                     continue;
                 }
             }
