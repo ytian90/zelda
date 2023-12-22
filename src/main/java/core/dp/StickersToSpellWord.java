@@ -54,4 +54,9 @@ public class StickersToSpellWord {
     // we need to calculate all possible subsets of the target in memo and O(N) to iterating all words in stickers
     // S: O(2 ^ L)
 
+    public static void main(String[] args) {
+        StickersToSpellWord obj = new StickersToSpellWord();
+        System.out.println(obj.minStickers(new String[]{"with","example","science"}, "thehat"));
+    }
+
 }

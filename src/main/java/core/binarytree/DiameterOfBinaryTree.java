@@ -11,6 +11,7 @@ public class DiameterOfBinaryTree {
         return max;
     }
 
+    // return the max length via this node
     private int maxDepth(TreeNode node) {
         if (node == null) {
             return 0;

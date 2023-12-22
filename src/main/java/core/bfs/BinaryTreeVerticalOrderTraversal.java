@@ -6,6 +6,7 @@ import java.util.*;
 
 /**
  * LC 314. Binary Tree Vertical Order Traversal
+ * similar to LC 987. Vertical Order Traversal of a Binary Tree
  */
 public class BinaryTreeVerticalOrderTraversal {
     public List<List<Integer>> verticalOrder(TreeNode root) {
