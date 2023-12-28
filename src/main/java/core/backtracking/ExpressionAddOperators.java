@@ -46,6 +46,26 @@ public class ExpressionAddOperators {
     }
     // T: O(N * 4 ^ N), 4 choices +, -, *, append for each digit
     // S: O(N)
+    /*
+    Let say the expression string formed so far is 1 + 2 (eval is 3)
+    in current step let say we cur is 3 (i.e. the remnant string expression till end)
+    we can choose to add, subtract or multiply 3 to the evaluated value (eval)
+    however, if we choose multiply 3 (i.e. 1 + 2 * 3), then the answer should be 7
+    this is where multed (i.e. 2) shall help us, which is basically the last value that contributed to the current eval
+
+    We're interested in this cryptic invocation in recursion:
+
+    helper(rst, path + "*" + cur, num, target, i + 1, eval - multed + multed * cur, multed * cur )
+
+    so, to ensure we take operator precedence in computing the current value of eval and compute the expression
+    as 1 + (2 * 3) = 7 and not (1 + 2) * 3 = 9, we do following :
+    eval - multed + multed * cur
+    eval : 3
+    multed : 2
+    cur : 3
+
+    and set the last contributed value to eval as multed * current
+     */
 
     public static void main(String[] args) {
         System.out.println(addOperators("105", 5));
