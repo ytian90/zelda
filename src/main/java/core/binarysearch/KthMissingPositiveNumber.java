@@ -2,6 +2,7 @@ package core.binarysearch;
 
 /**
  * LC 1539. Kth Missing Positive Number
+ * similar to LC 1060. Missing Element in Sorted Array
  */
 public class KthMissingPositiveNumber {
     public static int findKthPositive(int[] arr, int k) {
