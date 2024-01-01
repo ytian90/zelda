@@ -18,5 +18,5 @@ public class MinimumDepthOfBinaryTree {
             return 1 + Math.min(left, right);
         }
     }
-    // TS: O(N)
+    // TS: O(N) 
 }
