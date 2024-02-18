@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 /**
  * LC 2402. Meeting Rooms III
  */
-public class MeetingRoom3 {
+public class MeetingRooms3 {
     public int mostBooked(int n, int[][] meetings) {
         Arrays.sort(meetings, (a, b) -> (a[0] - b[0]));
         int[] count = new int[n];
