@@ -1,0 +1,22 @@
+package core.linkedlist;
+
+/**
+ * LC 203. Remove Linked List Elements
+ */
+public class RemoveLinkedListElements {
+    public ListNode removeElements(ListNode head, int val) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode curr = dummy;
+        while (curr != null && curr.next != null) {
+            if (curr.next.val == val) {
+                curr.next = curr.next.next;
+            } else {
+                curr = curr.next;
+            }
+        }
+        return dummy.next;
+    }
+    // T: O(N)
+    // S: O(1)
+}
