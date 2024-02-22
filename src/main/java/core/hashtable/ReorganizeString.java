@@ -1,4 +1,4 @@
-package core.hashmap;
+package core.hashtable;
 
 /**
  * LC 767. Reorganize String

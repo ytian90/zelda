@@ -1,4 +1,4 @@
-package core.hashmap;
+package core.hashtable;
 
 import java.util.HashMap;
 import java.util.Map;
