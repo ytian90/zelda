@@ -28,9 +28,8 @@ public class CombinationSum {
             list.remove(list.size() - 1);
         }
     }
-    // T: O(N ^(Target/Minimum)), where N is the number of candidates, Target is target value, Minimum is the
-    // minimum value among the candidates.
-    // S: O(Target/Minimum)
+    // T: O(2 ^ N)
+    // S: O(N)
 
     public static void main(String[] args) {
         System.out.println(combinationSum(new int[]{2, 3, 6, 7}, 7));
